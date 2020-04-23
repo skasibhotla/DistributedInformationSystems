@@ -1,0 +1,17 @@
+﻿@model DistributedInformationSystems.ViewModels.GenerateDataViewModel
+@{
+    ViewBag.Title = "GenerateData";
+}
+
+<h2>Generate Data</h2>
+<hr />
+<i>Use this form to popualte your database with data from the CollegeScoreCard api</i>
+@using (Html.BeginForm("Generate", "Enrollments", FormMethod.Post, new { id = "GenerateForm" }))
+{
+    <div class="form-group">
+        Please hit Generate to get the data for school years 2012 through 2020 from CollegeScoreCard API:     
+    </div>
+    <button type="submit" class="btn btn-primary">Generate</button>
+    @Html.HiddenFor(m => m.SelectedSchoolYear)
+}
+
